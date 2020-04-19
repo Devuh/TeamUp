@@ -1,10 +1,12 @@
+require('./config.js');
 var Eris = require('eris');
 
-var bot = new Eris.CommandClient("NzAxMzE2ODM3MTM2MTM4MzMw.XpvyOA.xh3G1a7Wy0D-YSuA6VTICc4tHAk", {}, {
+var bot = new Eris.CommandClient(token, {}, {
 	prefix: "tu!",
 	description: "TeamUp is a bot that can assign factions to your server members using pre-defined commands",
 	owner: "/u/Devuluh"
 });
+
 
 bot.on("ready", () => {
 	console.log("Ready!");
