@@ -7,10 +7,13 @@ var bot = new Eris.CommandClient(token, {}, {
 	owner: "/u/Devuluh"
 });
 
-
 bot.on("ready", () => {
 	console.log("Ready!");
 });
+
+/* ---------------------------------------------------------
+ * Allows for the bot's command prefix to be viewed, and set
+*/
 
 bot.registerCommand("prefix", (msg,args) => {
 	if(args.length == 0){
@@ -22,7 +25,7 @@ bot.registerCommand("prefix", (msg,args) => {
 },{
 	description: "Sets the bot's prefix",
 	fullDescription: "Sets the bot's prefix on the server. E.g: `" + bot.commandOptions.prefix + "prefix -` will set the prefix to `-`, so commands will look more like `-help`.",
-	permissions: {"manageRoles": true},
+	requirements: {permissions: {"manageRoles": true}},
 	permissionMessage: "Error: Must have the `Manage Roles` permissions to use this command."
 });
 
